@@ -7,11 +7,14 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class CharactersService {
-
+private collectionName:string = 'caracteres';
   constructor(private firestore:AngularFirestore) { }
 
 
   getCharacters():Observable<Character[]>{
-  return this.firestore.collection<Character>('caracteres').valueChanges();
+  return this.firestore.collection<Character>(this.collectionName).valueChanges();
+   }
+   saveCharacter(c:Character){
+     this.firestore.collection(this.collectionName).add(c).then();
    }
 }

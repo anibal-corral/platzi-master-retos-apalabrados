@@ -9,9 +9,16 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class NumbersService {
+  numbers =this.firestore.collection<Number>('numeros').valueChanges();
   constructor(private firestore:AngularFirestore) { }
 
   getNumbers():Observable<Number[]>{
-  return this.firestore.collection<Number>('numeros').valueChanges();
+  return this.numbers;
+   }
+
+   saveNumber(n:number):void{
+     //
+console.log('Number saved');
+console.log(this.numbers);
    }
 }

@@ -1,9 +1,12 @@
 <h1>{{title}}</h1>
 
 <div class="">
-  <span>Enter a value</span>
-  <input type="text" name="input" value="">
-  <button type="button" name="button">Enter</button>
+  <form #form = "ngForm" (ngSubmit) = "onSubmit(form.value.input)" >
+      <span>Enter a value</span>
+     <input type = "text" name = "input" placeholder = "Text here" ngModel>
+     <br/>
+     <input type = "submit" value = "submit">
+  </form>
 </div>
 
 <app-numbers></app-numbers>
