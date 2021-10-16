@@ -7,6 +7,11 @@ import { NumbersComponent } from './numbers/numbers.component';
 import { TextsComponent } from './texts/texts.component';
 import { CharactersComponent } from './characters/characters.component';
 import { HttpClientModule } from '@angular/common/http';
+//opportunity for improvement: Not using compat
+import { AngularFireModule} from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
+import {environment}from 'src/environments/environment.prod';
 
 @NgModule({
   declarations: [
@@ -18,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
     HttpClientModule
   ],
   providers: [],

@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-import {Number} from '../interfaces/number';
+import {Text} from '../interfaces/text';
 //improvement opportunity
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
-
 import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NumbersService {
+export class TextsService {
+
   constructor(private firestore:AngularFirestore) { }
 
-  getNumbers():Observable<Number[]>{
-  return this.firestore.collection<Number>('numeros').valueChanges();
+
+  getTexts():Observable<Text[]>{
+  return this.firestore.collection<Text>('texto').valueChanges();
    }
 }

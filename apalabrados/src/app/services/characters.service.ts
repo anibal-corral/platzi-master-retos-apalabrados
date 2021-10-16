@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import {Number} from '../interfaces/number';
+import {Character} from '../interfaces/character';
 //improvement opportunity
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
-
 import { Observable, of } from 'rxjs';
-
 @Injectable({
   providedIn: 'root'
 })
-export class NumbersService {
+export class CharactersService {
+
   constructor(private firestore:AngularFirestore) { }
 
-  getNumbers():Observable<Number[]>{
-  return this.firestore.collection<Number>('numeros').valueChanges();
+
+  getCharacters():Observable<Character[]>{
+  return this.firestore.collection<Character>('caracteres').valueChanges();
    }
 }

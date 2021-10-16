@@ -7,11 +7,6 @@ import {NumbersService} from "../services/numbers.service";
   styleUrls: ['./numbers.component.css']
 })
 export class NumbersComponent implements OnInit {
-number:Number={
-  numero: 0,
-  acumulado: 0
-}
-
 numbers: Number[]=[];
 
   constructor(private numberService:NumbersService) {}
