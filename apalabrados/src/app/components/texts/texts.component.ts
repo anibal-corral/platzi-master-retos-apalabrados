@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Text} from "../interfaces/text"
-import {TextsService} from "../services/texts.service";
+import {Text} from "../../interfaces/text"
+import {TextsService} from "../../services/texts.service";
 
 @Component({
   selector: 'app-texts',

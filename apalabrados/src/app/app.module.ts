@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NumbersComponent } from './numbers/numbers.component';
-import { TextsComponent } from './texts/texts.component';
-import { CharactersComponent } from './characters/characters.component';
+import { NumbersComponent } from './components/numbers/numbers.component';
+import { TextsComponent } from './components/texts/texts.component';
+import { CharactersComponent } from './components/characters/characters.component';
 import { HttpClientModule } from '@angular/common/http';
 //opportunity for improvement: Not using compat
 import { AngularFireModule} from '@angular/fire/compat';

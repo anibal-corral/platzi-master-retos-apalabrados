@@ -1,0 +1,17 @@
+
+<table class="table table-dark">
+
+<thead>
+  <tr>
+     <th>Numero</th><th>Acumulado</th>
+  </tr>
+</thead>
+
+<tbody>
+  <tr *ngFor = "let n of numbers;let i = index">
+    <td>{{n.numero}}</td>
+    <td>{{n.acumulado}}</td>
+  </tr>
+</tbody>
+
+</table>

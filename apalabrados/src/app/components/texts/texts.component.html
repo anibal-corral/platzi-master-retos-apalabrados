@@ -1,9 +1,16 @@
-<p>texts works!</p>
-<table>
+
+<table class="table table-striped">
+   <thead >
+    <tr>
   <th>Texto</th><th>Inicial</th><th>Final</th>
+    </tr>
+  </thead>
+<tbody>
   <tr *ngFor = "let t of texts;let i = index">
     <td>{{t.texto}}</td>
     <td>{{t.inicial}}</td>
     <td>{{t.final}}</td>
   </tr>
+</tbody>
+
 </table>

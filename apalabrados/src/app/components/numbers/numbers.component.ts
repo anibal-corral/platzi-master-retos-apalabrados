@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Number}from "../interfaces/number";
-import {NumbersService} from "../services/numbers.service";
+import {Number}from "../../interfaces/number";
+import {NumbersService} from "../../services/numbers.service";
 @Component({
   selector: 'app-numbers',
   templateUrl: './numbers.component.html',

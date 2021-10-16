@@ -1,14 +1,30 @@
-<h1>{{title}}</h1>
 
-<div class="">
+<div class="container">
+  <h1 class="text-center">{{title}}</h1>
+
   <form #form = "ngForm" (ngSubmit) = "onSubmit(form.value.input)" >
-      <span>Enter a value</span>
-     <input type = "text" name = "input" placeholder = "Text here" ngModel>
-     <br/>
-     <input type = "submit" value = "submit">
+    <div class="form-group">
+       <label for="input">Enter a value</label>
+       <input type = "text"id="input" name = "input" placeholder = "Text here" class="form-control" ngModel>
+<input type = "submit" value = "submit" class="btn btn-primary">
+    </div>
+
   </form>
+
+
+<div class="row">
+  <div class="col-sm">
+  <app-numbers></app-numbers>
+  </div>
+  <div class="col-sm">
+    <app-characters></app-characters>
+
+  </div>
+  <div class="col-sm">
+    <app-texts></app-texts>
+
+  </div>
 </div>
 
-<app-numbers></app-numbers>
-<app-characters></app-characters>
-<app-texts></app-texts>
+
+</div>
