@@ -19,4 +19,6 @@ numbers: Number[]=[];
     this.numberService.getNumbers().subscribe(result => this.numbers=result);
   }
 
+  
+
 }

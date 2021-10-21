@@ -9,16 +9,33 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class NumbersService {
-  numbers =this.firestore.collection<Number>('numeros').valueChanges();
+private collectionName:string = 'numeros';
   constructor(private firestore:AngularFirestore) { }
 
   getNumbers():Observable<Number[]>{
-  return this.numbers;
+  return this.firestore.collection<Number>(this.collectionName).valueChanges();
    }
 
-   saveNumber(n:number):void{
+
+   saveNumber(n:number){
      //
-console.log('Number saved');
-console.log(this.numbers);
+     var accumulated=0;
+// this.firestore.collection(this.collectionName).add(n).then();
+this.firestore.collection<Number>(this.collectionName).get().forEach((doc)=>{
+  doc.docs.forEach(
+    (d)=> {
+      accumulated+=d.get('numero');
+      // console.log(accumulated)
+    }
+    // console.log(d.get('numero'))
+)
+}).then(
+  (result)=>{
+    this.firestore.collection(this.collectionName).add({numero:n,acumulado:accumulated+n}).then();
+  }
+);
+
+
+
    }
 }

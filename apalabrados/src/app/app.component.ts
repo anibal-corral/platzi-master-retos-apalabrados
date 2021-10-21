@@ -21,7 +21,7 @@ private regexChar = /[^a-zA-Z0-9 ]/g;
   }
 
   onSubmit(data:string){
-alert(`${data}`);
+
 const input = data.trim();
 
 if(input!=""){//If data is not empty
@@ -41,9 +41,14 @@ if(input!=""){//If data is not empty
 }
 }//End onSubmit
 
-saveNumber(n:number){
+ saveNumber(n:number){
+  //First
+
+   this.numbersService.saveNumber(n);
+
+
   //// TODO save number
-  this.numbersService.saveNumber(n);
+  // this.numbersService.saveNumber(n);
 }
 
 saveCharacter(text:string){
